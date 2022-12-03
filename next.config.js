@@ -7,7 +7,6 @@ const nextConfig = {
         'links.papareact.com',
         'platform-lookaside.fbsbx.com'
       ],
-  
   },
 }
 
