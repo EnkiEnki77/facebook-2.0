@@ -30,7 +30,9 @@ const InputBox = () => {
         }
     }
 
-    console.log(imageToPost)
+    const removeImage = () => {
+        setImageToPost(null)
+    }
 
     const sendPost = async (e) => {
         e.preventDefault()
@@ -51,6 +53,7 @@ const InputBox = () => {
           }
 
           setInputValue('')
+          setImageToPost(null)
     }
 
     
@@ -80,6 +83,12 @@ const InputBox = () => {
                     onClick={(e) => sendPost(e)}
                     ></button>
             </form>
+            {imageToPost && (
+                <div onClick={removeImage}>
+                    <img alt="" src={imageToPost} className="h-10 object-contain"/>
+                </div>
+                )
+            }
         </div>
         <div className='flex justify-evenly p-3  border-t '>
             <div className='inputIcon'>
